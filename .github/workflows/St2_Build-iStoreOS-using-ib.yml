@@ -268,14 +268,14 @@ on:
           - beta
       openwrt_rootfs:
         description: "4、请选择Rootfs通用底包（先确保St1有执行）"
-        required: true
+        required: false
         default: "RELEASE"
         type: choice
         options:
           - RELEASE
       network_settings:
         description: "5、请选择初始网络配置（先确保St1有执行）"
-        required: true
+        required: false
         default: "dhcp"
         type: choice
         options:

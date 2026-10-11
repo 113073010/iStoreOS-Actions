@@ -267,14 +267,14 @@ on:
           - flippy
           - beta
       openwrt_rootfs:
-        description: "3、请选择Rootfs通用底包（先确保St1有执行）"
+        description: "4、请选择Rootfs通用底包（先确保St1有执行）"
         required: true
         default: "RELEASE"
         type: choice
         options:
           - RELEASE
       network_settings:
-        description: "4、请选择初始网络配置（先确保St1有执行）"
+        description: "5、请选择初始网络配置（先确保St1有执行）"
         required: true
         default: "dhcp"
         type: choice

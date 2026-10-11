@@ -244,7 +244,7 @@ on:
           - ztl-a568
           - zysj
       openwrt_kernel:
-        description: "2、请选择内核版本"
+        description: "2、请选择内核标签"
         required: true
         default: "6.12.y"
         type: choice
@@ -257,6 +257,15 @@ on:
         required: false
         default: true
         type: boolean
+      kernel_usage:
+        description: "3、请选择内核分支"
+        required: false
+        default: "stable"
+        type: choice
+        options:
+          - stable
+          - flippy
+          - beta
       openwrt_rootfs:
         description: "3、请选择Rootfs通用底包（先确保St1有执行）"
         required: true
@@ -311,7 +320,7 @@ jobs:
           openwrt_kernel: ${{ inputs.openwrt_kernel }}
           auto_kernel: ${{ inputs.auto_kernel }}
           kernel_repo: ophub/kernel
-          kernel_usage: stable
+          kernel_usage: ${{ inputs.kernel_usage }}
           builder_name: kwonelee
 
       - name: 📜 调整.img.gz 文件名
